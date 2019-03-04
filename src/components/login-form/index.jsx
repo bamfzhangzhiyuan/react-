@@ -11,7 +11,7 @@ class For extends Component{
 
   handleSubmit=(e)=>{
     e.preventDefault()
-    const {resetFields,validateFields}=this.props.form
+    const {validateFields}=this.props.form
     validateFields((err,value)=>{
 
       if(!err){

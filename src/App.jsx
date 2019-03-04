@@ -9,6 +9,7 @@ import Admin from "./pages/admin"
 import "./assets/less/index.less"
 class App extends Component {
   render () {
+
     return (
       <Router>
         <Switch>

@@ -1,5 +1,47 @@
-.header{
-  height: 100px;
+.headerr{
+ background: #fff;
+ .header-top{
+   text-align: right;
+   height: 60px;
+   line-height: 60px;
+   padding-right: 20px;
+   a{
+     margin-left: 20px;
+   }
+ }
+  .header-bottom{
+    border-top:1px solid green;
+    height: 40px;
+    line-height: 40px;
+    padding-right: 20px;
+    .title{
+      font-size: 20px;
+      text-align: center;
 
-  line-height: 100px;
+        &:after{
+          content: "";
+          position: absolute;
+          bottom: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-bottom: 15px solid transparent;
+          border-top:15px solid #fff;
+          border-right:15px solid transparent ;
+          border-left: 15px solid transparent;
+        }
+
+
+    }
+   .time{
+
+     text-align: right;
+     span{
+       padding: 0 10px 0 10px;
+     }
+     img{
+       padding-bottom: 5px;
+       width: 30px;
+     }
+   }
+  }
 }

@@ -9,20 +9,19 @@ class Leftnav extends Component {
 
   createmenu=(menu)=>{
 
-    const stre=this.props.location.pathname
+
     return menu.map((item)=>{
 
         if(item.children){
-
+          const str=this.props.location.pathname
 
           const res=item.children.find((item)=>{
-            return item.key===stre
+            return str.indexOf(item.key)===0
           })
+
           if(res){
             this.openurl=item.key
           }
-
-
           return(
             <SubMenu key={item.key} title={<span><Icon type={item.icon} /><span>{item.title}</span></span>}>
             {this.createmenu(item.children)}
@@ -57,13 +56,16 @@ class Leftnav extends Component {
   render () {
 
 
-  console.log(this.openurl)
-    const str=this.props.location.pathname
+    let str=this.props.location.pathname
+    if(/^\/product/.test(str)){
+       str="/product"
+    }
+
     return (
       <div className="left-nav">
         <header className="header">
           <img src={logo}/>
-          <h2>硅谷后台</h2>
+          <h2>后台管理</h2>
         </header>
         <Menu
           selectedKeys={[str]}

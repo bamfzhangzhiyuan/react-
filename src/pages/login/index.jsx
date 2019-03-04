@@ -7,22 +7,34 @@ import logo from "../../assets/images/logo.png"
 import "./index.less"
 import WrappedNormalLoginForm from "../../components/login-form"
 import {loginAjax} from "../../api/index.js"
-
+import {setitem} from "../../utils/storageUtils"
+import memoryUtils from "../../utils/memoryUtils"
 export default class Login extends Component {
+
  state={
    errmsg:""
+
  }
   sendajax=async(username,password)=>{
 
     const result=await loginAjax(username,password)
 
       if(result.status===0){
+        //用户登陆成功
+        //保存用户信息
+        setitem(result.data)
+        //在内存中保存一份
+        memoryUtils.user=result.data
+        //跳转到admin页面
         this.props.history.replace("/")
-        console.log(this.props.history)
+
       }else{
+
         this.setState({
-          errmsg:result.msg
+          errmsg:result.msg,
+
         })
+
       }
 
   }
@@ -31,12 +43,14 @@ export default class Login extends Component {
   render () {
    const {errmsg}=this.state
     const height=errmsg?30:0
-    console.log("hhhhh")
+
+
+    console.log(this.state.height)
     return (
       <div className="login">
         <section className="login-top">
           <img src={logo}/>
-          <h2>REACT项目: 后台管理系统</h2>
+          <h2>秦皇岛旅游后台管理系统</h2>
         </section>
         <section className="login-content">
           <div className="err-msg" style={{height}}>{errmsg}</div>
@@ -47,6 +61,17 @@ export default class Login extends Component {
 
     )
 
+
+  }
+  componentDidUpdate(){
+
+   this.bule=setTimeout(()=>{
+      this.setState({
+        errmsg:"",
+
+      })
+      clearTimeout(this.bule)
+    },1000)
 
   }
 }
