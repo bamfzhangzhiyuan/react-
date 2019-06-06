@@ -61,10 +61,13 @@ export const getupdatepagelist=(productType,productName,pageNum,pageSize)=>{
 }
 
 
-export const obc = {aa:"sss"}
+export const obc = {aa:"aaa"}
+export const obc = {aa:"aaa"}
 
-export const obc = {bb:"sss"}
-export const arc = {bb:"sclearss"}
+export const obc = {bb:"aaa"}
+export const arc = {bb:"aaa"}
+export const obc = {bb:"aaa"}
+export const arc = {bb:"aaa"}
 
 
 
