@@ -61,5 +61,6 @@ export const getupdatepagelist=(productType,productName,pageNum,pageSize)=>{
 }
 
 export const obj = {bb:"sss"}
+export const arr = {bb:"sss"}
 
 
