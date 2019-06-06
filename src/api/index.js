@@ -60,5 +60,6 @@ export const getupdatepagelist=(productType,productName,pageNum,pageSize)=>{
   return ajax(prefix+"/manage/product/search",({[productType]:productName,pageNum,pageSize}))
 }
 
-export const obj = {bb:"sss"}
+export const obj = {aa:"sss"}
+
 
